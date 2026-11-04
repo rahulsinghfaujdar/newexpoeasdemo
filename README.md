@@ -16,12 +16,45 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npx expo start
    ```
 
+
+# Link and deploy your project
+```bash
+npm install --global eas-cli
+npx create-expo-app expoeasdemo 
+cd expoeasdemo 
+eas init --id 2e6491b1-873e-4e9d-8b6b-2e9f6d534c5b
+npx expo export --platform web
+eas deploy
+```
+
+
 In the output, you'll find options to open the app in a
 
 - [development build](https://docs.expo.dev/develop/development-builds/introduction/)
 - [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+
+## Web
+
+Run the responsive web app with Vite:
+
+```bash
+npm run web
+```
+
+Create a production web build in `dist-vite` with:
+
+```bash
+npm run build:web
+```
+
+To use Expo's web development server or static export instead, run `npm run web:expo` or `npm run build:web:expo`.
+
+## Migration guides
+
+- [React Native CLI to Expo](./docs/migrate-react-native-cli-to-expo/README.md)
+- [Expo web with Vite](./docs/expo-web-with-vite/README.md)
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 

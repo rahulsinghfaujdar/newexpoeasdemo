@@ -8,7 +8,11 @@
     "scheme": "expoeasdemo",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.rahulpachahrasteam.expoeasdemo",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -17,7 +21,8 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.rahulpachahrasteam.expoeasdemo"
     },
     "web": {
       "output": "static",
@@ -32,11 +37,29 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }
+      ],
+      "expo-sqlite",
+      "expo-localization",
+      [
+        "posthog-react-native/expo",
+        {
+          "ignoreError": true,
+          "disableSourceMaps": true,
+          "uploadNativeSymbols": false,
+          "postHogExecutable": "./node_modules/.bin/posthog-cli"
+        }
       ]
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "2e6491b1-873e-4e9d-8b6b-2e9f6d534c5b"
+      }
+    },
+    "owner": "rahulpachahras-team"
   }
 }
